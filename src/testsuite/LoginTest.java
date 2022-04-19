@@ -27,11 +27,12 @@ public class LoginTest extends BaseTest {
         WebElement loginbtn=driver.findElement(By.xpath("//input[@id='btnLogin']"));
         loginbtn.click();
         // varify assert welcometext
-        String expectedmessage= "Welcome 123";
+        String expectedmessage= "Welcome";
         WebElement actualmessage=driver.findElement(By.xpath("//a[@id='welcome']"));
         String actualmessage1=actualmessage.getText();
+        String actualmessage2=actualmessage1.substring(0,7);
         //now assert
-        Assert.assertEquals("welcome page open",expectedmessage,actualmessage1);
+        Assert.assertEquals("welcome page open",expectedmessage,actualmessage2);
     }
      @Test
     public void navigateToForgotPasswordPageSuccessfully(){
